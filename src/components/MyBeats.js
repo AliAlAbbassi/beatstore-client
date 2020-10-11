@@ -25,7 +25,8 @@ const MyBeats = ({ auth }) => {
                         <div className='w-3/4 m-auto'>
                         {purchasedBeats.map(beat => (
                             <div key={beat._id} className='flex'>
-                                <img alt='beat cover' src={beat.cover} className='coverMyBeats w-40 h-40 lg:w-24 lg:h-24 rounded object-cover' />
+                                <img alt='beat cover' src={beat.cover150} className='coverMyBeats rounded object-cover hidden lg:block' />
+                                <img alt='beat cover' src={beat.cover320} className='coverMyBeats rounded object-cover lg:hidden' />
                                 <p className='beatNameMyBeats text-white text-5xl lg:text-3xl'>{beat.name}</p>
                                 <button className='btnDownloadMyBeats'>
                                     <svg className='downloadLogoMyBeats' version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

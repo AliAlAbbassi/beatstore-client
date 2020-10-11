@@ -37,14 +37,17 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .textMoneyStyle {
+        font-size: 35px;
+    }
     .addToCartCartCart {
-        width: 51px;
-        height: 51px;
-        margin-top: 1.4px;
+        width: 40px;
+        height: 40px;
+        margin-top: 4px;
     }
     .beatNameWhite {
         margin-left: 12px;
-        margin-top: 34px;
+        margin-top: 35px;
     }
     .beatCoverPhone {
         object-fit: cover;
@@ -54,11 +57,6 @@
         color: white;
         font-size: 90px;
         margin-left: 12px;
-    }
-    .tagStylePhone {
-        font-size: 40px;
-        color: white;
-        margin-left: 20px;
     }
     .genreHeaderPhone {
         font-size: 50px;
@@ -91,51 +89,39 @@
     border-radius: 5%;
 }
     .buttonCartBeat {
-    height: 90px;
-    width: 150px;
-    margin-top: 7px;
+    height: 80px;
+    width: 170px;
+    margin-left: 10px;
+    margin-top: 35px;
     background: #ff9500;
-    margin-left: -10px;
 }
     .beatName {
     margin-left: 15px;
     margin-top: 35px;
     color: black;
 }
-    .buttonSM {
-        margin-right: 0px;
-        margin-left: 87px;
-        margin-top: 20px;
-    }
     .tagStyles {
-    margin-left: 7px;
-    padding: 0.1rem;
-    margin-bottom: 40px;
-    margin-top: 19px;
+        padding: 0.1rem;
+        margin-top: 50px;
 }
     .tagActualStyle {
-    font-size: 1.9rem;
-    margin-top: 30px;
+    font-size: 30px;
 }
     .beatContainer {
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
 }
-    .buttonSM {
-        margin-bottom: -200px;
-    }
 }
 @media screen and (min-width: 1024px) {
     .bpmStyle {
-        margin-top: 4px;
-    }
-    .textMoneyStyle {
+        margin-top: 14px;
+        margin-left: 90px;
     }
     .addToCartCartCart {
         width: 25px;
         height: 25px;
-        margin-top: 1.5px;
+        margin-top: 1.8px;
     }
     .beatNameWhite {
         margin-left: 12px;
@@ -149,32 +135,25 @@
     margin-left: auto;
 }
     .buttonCartBeat {
-    height: 50px;
-    width: 100px;
-    margin-top: 10px;
     background: #ff9500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    margin-left: 20px;
 }
     .beatName {
-    margin-left: 20px;
     margin-top: 6px;
     margin-bottom: 5px;
     color: black;
     font-size: x-large;
 }
     .tagStyle {
-    margin-left: 21px;
     border: 0.01rem solid;
     padding: 0.1rem;
 }
     .tagActualStyle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 14px;
     margin-right: 7px;
 }
-    .buttonSM {
-        margin-right: 20px;
-        margin-left: 0px;
-        margin-top: -5px;
-        margin-bottom: -240px;
-    }
 } 

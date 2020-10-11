@@ -34,7 +34,7 @@ const NavBar = ({ auth }) => {
     }, [matches])
 
     return (
-        <div>
+        <div className='relative z-10'>
             <nav style={{ backgroundColor: '#191919' }} className="navBAR">
                 <div className="flex flex-no-shrink items-stretch h-12 lg:h-0 justify-between" >
                     <div
@@ -59,7 +59,10 @@ const NavBar = ({ auth }) => {
                                 )}
                                 {cart.length > 0 && (
                                     <div>
-                                        <svg className='addToCart' onClick={() => setIsOpenCart(!isOpenCart)} xmlns="http://www.w3.org/2000/svg" width="432" height="512" viewBox="0 0 432 512">
+                                        <svg className='addToCart' onClick={() => {
+                                            setIsOpenCart(!isOpenCart)
+                                            setIsOpen(false)
+                                            }} xmlns="http://www.w3.org/2000/svg" width="432" height="512" viewBox="0 0 432 512">
                                             <g id="add-to-cart-white" transform="translate(-40)">
                                                 <path id="Path_1" data-name="Path 1" d="M472,452a20,20,0,0,1-20,20H432v20a20,20,0,0,1-40,0V472H372a20,20,0,0,1,0-40h20V412a20,20,0,0,1,40,0v20h20A20,20,0,0,1,472,452Zm0-312V332a20,20,0,0,1-40,0V160H392v60a20,20,0,0,1-40,0V160H160v60a20,20,0,0,1-40,0V160H80V472H292a20,20,0,0,1,0,40H60a20,20,0,0,1-20-20V140a20,20,0,0,1,20-20h60.946C128.891,52.523,186.423,0,256,0S383.109,52.523,391.054,120H452A20,20,0,0,1,472,140ZM350.659,120a96,96,0,0,0-189.318,0Z" fill="#fff" />
                                             </g>
@@ -97,7 +100,7 @@ const NavBar = ({ auth }) => {
                         leave="transition ease-in duration-75"
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
-                        className='block lg:hidden'
+                        className='block lg:hidden relative z-10'
                     >
                         <div className="block lg:hidden origin-top-right absolute right-0 mr-5 mt-5 rounded-md shadow-lg" id='cartModal'>
                             <div className="rounded-md bg-black bg-opacity-75 shadow-xs mt-5">
@@ -151,9 +154,12 @@ const NavBar = ({ auth }) => {
                 </div>
                 <div className="hidden lg:block md:flex md:items-stretch md:flex-no-shrink md:flex-grow">
                     <div className="hidden lg:flex md:justify-end ml-auto">
-                        <div href="#" className="flex-no-grow flex-no-shrink lg:text-right relative py-2 px-2 mt-1  leading-normal text-white no-underline flex items-center hover:bg-grey-dark"><Link to='/beatstore' className='text-white no-underline hover:no-underline hidden lg:block lg:text-right'>BEATS</Link></div>
+                        <div href="#" className="flex-no-grow flex-no-shrink lg:text-right relative z-10 py-2 px-2 mt-1  leading-normal text-white no-underline flex items-center hover:bg-grey-dark"><Link to='/beatstore' className='text-white no-underline hover:no-underline hidden lg:block lg:text-right'>BEATS</Link></div>
                         <div>
-                            <div href="#" onClick={() => setIsOpenCart(!isOpenCart)} className="flex-no-grow flex-no-shrink relative flex py-2 px-2 mt-1 leading-normal text-white no-underline items-center hover:bg-grey-dark lg:text-right" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                            <div href="#" onClick={() => {
+                                setIsOpenCart(!isOpenCart)
+                                setIsOpen(false)
+                            }}  className="z-10 flex-no-grow flex-no-shrink relative flex py-2 px-2 mt-1 leading-normal text-white no-underline items-center hover:bg-grey-dark lg:text-right" id="options-menu" aria-haspopup="true" aria-expanded="true">
                                 {cart && (
                                     <div className='hidden lg:block'>
                                         {cart.length > 0 && (
@@ -175,10 +181,10 @@ const NavBar = ({ auth }) => {
                             leave="transition ease-in duration-75"
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
-                            className='hidden lg:block'
+                            className='hidden lg:block relative z-10'
                         >
-                            <div className="hidden lg:block origin-top-right absolute right-0 mt-5 mr-5 w-56 rounded-md shadow-lg" id='cartModal'>
-                                <div className="rounded-md bg-black bg-opacity-75 shadow-xs">
+                            <div className="z-10 hidden lg:block origin-top-right absolute right-0 mt-5 mr-5 w-56 rounded-md shadow-lg" id='cartModal'>
+                                <div className="rounded-md bg-white shadow-xs">
                                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                         {cart && (
                                             <div className='block px-4 py-2 col-start-2 text-center' role="menuitem" >
@@ -195,10 +201,13 @@ const NavBar = ({ auth }) => {
                                 </div>
                             </div>
                         </Transition>
-                        <div className="relative inline-block">
+                        <div className="relative z-10 inline-block">
                             <div>
                                 <span className="rounded-md  hidden lg:block">
-                                    <button type="button" onClick={() => setIsOpen(!isOpen)} className="flex-no-grow flex-no-shrink relative py-2 px-2 leading-normal text-white no-underline flex items-center mt-1 transition ease-in-out duration-150" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                                    <button type="button" onClick={() => { 
+                                        setIsOpen(!isOpen)
+                                        setIsOpenCart(false)
+                                        }} className="flex-no-grow flex-no-shrink relative py-2 px-2 leading-normal text-white no-underline flex items-center mt-1 transition ease-in-out duration-150" id="options-menu" aria-haspopup="true" aria-expanded="true">
                                         ACCOUNT
         <svg className="-mr-1 ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -206,7 +215,6 @@ const NavBar = ({ auth }) => {
                                     </button>
                                 </span>
                             </div>
-
                             <Transition
                                 show={isOpen}
                                 enter='transition ease-out duration-100'
@@ -220,9 +228,18 @@ const NavBar = ({ auth }) => {
                                 <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
                                     <div className="rounded-md bg-white shadow-xs">
                                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                            <Link to='/mybeats' className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">My Beats</Link>
-                                            <Link to='/contactme' className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Support</Link>
-                                            <Link to='/Pricing' className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Pricing</Link>
+                                            <Link to='/mybeats' onClick={() => {
+                                                setIsOpenCart(false)
+                                                setIsOpen(false)
+                                            }} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">My Beats</Link>
+                                            <Link to='/contactme' onClick={() => {
+                                                setIsOpenCart(false)
+                                                setIsOpen(false)
+                                            }} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Support</Link>
+                                            <Link to='/Pricing' onClick={() => {
+                                                setIsOpen(false)
+                                                setIsOpenCart(false)
+                                            }} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Pricing</Link>
                                             <form>
                                                 {auth.isAuthenticated && (
                                                     <button className="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" >
@@ -240,7 +257,12 @@ const NavBar = ({ auth }) => {
                                 </div>
                             </Transition>
                         </div>
-
+                                                    {(isOpen || isOpenCart) && (
+                                                        <div onClick={() => { 
+                                                            setIsOpen(false)
+                                                            setIsOpenCart(false)
+                                                        }} tabIndex='-1' className='fixed top-0 bottom-0 left-0 right-0 h-full w-full cursor-default' ></div>
+                                                    )}
                     </div>
                 </div>
 

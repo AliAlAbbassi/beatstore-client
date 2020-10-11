@@ -49,8 +49,6 @@ const Cart = ({ auth, logout }) => {
         }
     }
 
-
-
     useEffect(() => {
         if (cart) {
             let valueArr = cart.map((item) => {
@@ -70,10 +68,10 @@ const Cart = ({ auth, logout }) => {
         if (auth.user) {
             if (localStorage.getItem('cart')) {
                 let newCart = []
-                newCart = [...JSON.parse(localStorage.getItem('cart'))]
-                newCart = [...newCart, ...auth.user.data.cart]
+                newCart = [...JSON.parse(localStorage.getItem('cart')), ...auth.user.data.cart]
+                console.log(newCart)
                 setCart(_.uniqBy(newCart, 'id'))
-                store.dispatch(updateCart(uniqBy(newCart, 'id')))
+                store.dispatch(updateCart(_.uniqBy(newCart, 'id')))
             } else {
                 setCart(auth.user.data.cart)
             }
@@ -116,7 +114,7 @@ const Cart = ({ auth, logout }) => {
             }
             setTotal(Math.round(gross - discount))
         }
-    }, [auth, cart])
+    }, [])
 
     useEffect(() => {
         if (cart.length > 0) {
@@ -148,7 +146,7 @@ const Cart = ({ auth, logout }) => {
 
     return (
         <div>
-            <div>
+            <div className='mb-20'>
                 <div>
                     {auth.isAuthenticated && (
                         <div className='cartContainer'>
@@ -192,7 +190,7 @@ const Cart = ({ auth, logout }) => {
                                                     <p className='text-6xl lg:text-2xl'>${total}</p>
                                                 </div>
                                                 {auth && (
-                                                    <p className='lg:text-sm text-3xl text-center mt-2'>Your are checking out as @{auth.user.data.name}. Not you? <p className='text-left text-sm leading-5 underline text-white hover:text-white' onClick={logout}>Sign Out</p></p>
+                                                    <div className='lg:text-sm text-3xl text-center mt-2'>Your are checking out as @{auth.user.data.name}. Not you? <p className='text-left text-sm leading-5 underline text-white hover:text-white' onClick={logout}>Sign Out</p></div>
                                                 )}
                                                 <div className='grid justify-center'>
                                                     <button className='payButton text-3xl lg:text-xl hover:text-black'>PAY VIA CREDIT CARD</button>
@@ -253,7 +251,7 @@ const Cart = ({ auth, logout }) => {
                                                 <div className='grid justify-center'>
                                                     <Link to='/login'>
                                                         <button className='payButton'>
-                                                            <p className='text-center text-4xl lg:text-xl' style={{ marginTop: '-3px' }}>
+                                                            <p className='text-center hover:text-black text-4xl lg:text-xl' style={{ marginTop: '-3px' }}>
                                                                 SIGN IN
 </p>
                                                         </button>

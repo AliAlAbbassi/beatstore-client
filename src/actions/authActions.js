@@ -107,7 +107,6 @@ export const updateCart = (cart) => (dispatch, getState) => {
         }))
         .catch(err => {
             dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'))
-            console.log(err.response)
             dispatch({
                 type: CART_UPDATE_FAILED
             })

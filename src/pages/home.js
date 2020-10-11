@@ -67,7 +67,7 @@ const Home = ({ auth }) => {
             <img alt='background' src='/Pikachu Unmasked 500x500.png' className='pikachuUnmasked' />
             {/* <img alt='background' src='/Unmasked 500x500.png' className='pikachuUnmasked' /> */}
             <div className='storeContainer'>
-                <h1 style={{ color: 'white' }} className=' text-6xl lg:text-3xl font-semibold font-body text-center mt-20 lg:mt-40'>BEATS</h1>
+                <h1 style={{ color: 'white' }} className=' text-6xl lg:text-3xl font-semibold font-body text-center mt-40 lg:mt-40'>BEATS</h1>
                 {beats && (
                     <Store beats={beats} status={status} isLoading={isLoading} />
                 )}
