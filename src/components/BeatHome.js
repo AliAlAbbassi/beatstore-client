@@ -24,7 +24,8 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 const overrideLg = css`
   display: block;
   margin-top: 250px;
-  margin-left: 600px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const override = css`
@@ -131,7 +132,7 @@ const BeatHome = ({ auth }) => {
                 name: data.data.name,
                 singer: data.data.artist,
                 cover: data.data.cover150,
-                musicSrc: data.data.mp3 || data.data.wav
+                musicSrc: data.data.mp3WTags || data.data.wavWTags
             }]
             setAudioList(newList)
             handleMountState()
@@ -304,7 +305,7 @@ const BeatHome = ({ auth }) => {
                                 </button>
                             </div>
                             <div className='ml-2'>
-                                <button className='download text-center'>DOWNLOAD</button>
+                                <button onClick={() => window.open(data.data.mp3WTags)} className='download text-center'>DOWNLOAD</button>
                             </div>
                         </div>
                         <div className='flex justify-center mt-5 ml-12'>
@@ -556,8 +557,7 @@ const BeatHome = ({ auth }) => {
                                         <svg className='addToCartLogo' id="Capa_1" enableBackground="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m472 452c0 11.046-8.954 20-20 20h-20v20c0 11.046-8.954 20-20 20s-20-8.954-20-20v-20h-20c-11.046 0-20-8.954-20-20s8.954-20 20-20h20v-20c0-11.046 8.954-20 20-20s20 8.954 20 20v20h20c11.046 0 20 8.954 20 20zm0-312v192c0 11.046-8.954 20-20 20s-20-8.954-20-20v-172h-40v60c0 11.046-8.954 20-20 20s-20-8.954-20-20v-60h-192v60c0 11.046-8.954 20-20 20s-20-8.954-20-20v-60h-40v312h212c11.046 0 20 8.954 20 20s-8.954 20-20 20h-232c-11.046 0-20-8.954-20-20v-352c0-11.046 8.954-20 20-20h60.946c7.945-67.477 65.477-120 135.054-120s127.109 52.523 135.054 120h60.946c11.046 0 20 8.954 20 20zm-121.341-20c-7.64-45.345-47.176-80-94.659-80s-87.019 34.655-94.659 80z" /></g></svg>
                                         <p className='moneyTextStyle mr-auto hover:text-black text-black'>$19.99</p>
                                     </button>
-                                    <button className='addToCartBtn flex'
-                                    >
+                                    <button onClick={() => window.open(data.data.mp3WTags)} className='addToCartBtn flex'>
                                         <svg className='downloadLogo' version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"
                                             viewBox="0 0 477.867 477.867" space="preserve">
                                             <g>

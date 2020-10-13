@@ -11,7 +11,8 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 const overrideLg = css`
   display: block;
   margin-top: 100px;
-  margin-left: 670px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 100px;
 `;
 
@@ -48,7 +49,7 @@ const Store = ({ auth, beats, status, error, isLoading, autoPlayState }) => {
             if (!newOptions.audioLists.some(beat2 => beat2.name === beat.name)) {
                 newOptions.audioLists.push({
                     name: beat.name,
-                    musicSrc: beat.mp3 || beat.wav,
+                    musicSrc: beat.mp3WTags || beat.wavWTags,
                     cover: beat.cover150,
                     singer: beat.artist
                 })

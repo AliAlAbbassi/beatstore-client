@@ -27,8 +27,8 @@ const MyBeats = ({ auth }) => {
                             <div key={beat._id} className='flex'>
                                 <img alt='beat cover' src={beat.cover150} className='coverMyBeats rounded object-cover hidden lg:block' />
                                 <img alt='beat cover' src={beat.cover320} className='coverMyBeats rounded object-cover lg:hidden' />
-                                <p className='beatNameMyBeats text-white text-5xl lg:text-3xl'>{beat.name}</p>
-                                <button className='btnDownloadMyBeats'>
+                                <p className='beatNameMyBeats text-center text-white text-5xl lg:text-3xl'>{beat.name}</p>
+                                <button onClick={() => window.open(beat.mp3WTags)} className='btnDownloadMyBeats'>
                                     <svg className='downloadLogoMyBeats' version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 477.867 477.867" space="preserve">
 <g>

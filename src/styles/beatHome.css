@@ -85,11 +85,12 @@
         font-size: 22px;
     }
     .download {
-        margin-top: 7.5px;
+        margin-top: 7px;
+        text-align: center;
     }
     .downloadLogo {
         width: 25px;
-        margin-top: 5px;
+        margin-top: 5.5px;
         margin-left: 10.2px;
         margin-right: 3px;
     }
