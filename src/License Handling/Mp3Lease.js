@@ -1,15 +1,14 @@
 import { Paragraph, Packer, Document } from 'docx'
 import { saveAs } from 'file-saver'
-import { useState } from 'react'
-import { connect } from 'react-redux'
 
-const GetMp3Lease = ({ auth }) => {
+const GetMp3Lease = (auth) => {
     const doc = new Document()
     const date = new Date()
     const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+    const name = null
+
     const fullDate = `${weekdays[date.getDay()]} ${date.getDay()}-${date.getDate()}-${date.getFullYear()}`
-    const [name] = useState(null)
 
     doc.addSection({
         properties: {},
@@ -277,8 +276,5 @@ This Agreement is issued solely in connection with and for Licensee's use of the
     });
 }
 
-const mapStateToProps = state => ({
-    auth: state.auth
-})
 
-export default connect(mapStateToProps, {})(GetMp3Lease)
+export default GetMp3Lease

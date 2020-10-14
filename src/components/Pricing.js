@@ -19,10 +19,11 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { useMediaQuery } from '@material-ui/core';
+import { connect } from 'react-redux';
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-const Pricing = () => {
+const Pricing = ({auth}) => {
     const [showModelBasic, setShowModelBasic] = useState(false)
     const [showModelPremium, setShowModelPremium] = useState(false)
     const [showModelTrackout, setShowModelTrackout] = useState(false)
@@ -31,7 +32,7 @@ const Pricing = () => {
 
     const handleOpenBasic = (scrollType) => {
         setShowModelBasic(true)
-        getMp3Lease()
+        getMp3Lease(auth)
     }
     const handleOpenPremium = (scrollType) => {
         setShowModelPremium(true)
@@ -95,7 +96,7 @@ const Pricing = () => {
     // }, [handleOpenBasic, handleOpenExclusive, handleOpenPremium, handleOpenTrackout, handleOpenUnlimited])
 
     const theme = useTheme()
-    const fullscreen = useMediaQuery(theme.breakpoints.down('1024px'))
+    const fullscreen = useMediaQuery(theme.breakpoints.down('sm'))
 
     return (
         <div className="mb-20 mt-20" style={{ marginBottom: '150px' }}>
@@ -345,4 +346,8 @@ const Pricing = () => {
     )
 }
 
-export default Pricing
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+
+export default connect(mapStateToProps, {})(Pricing)
