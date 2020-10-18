@@ -179,8 +179,8 @@ const Pricing = ({auth}) => {
                 <SwiperSlide className='flex justify-center'>
                     <div className="packages" style={{ height: '80%' }}>
                         <h1 className='text-6xl mt-4' style={{ fontSize: '80px' }}>MP3 LEASE</h1>
-                        <h2 className="text-6xl text-gray" style={{ fontSize: '60px' }}>$29.99</h2>
-                        <ul className="text-left text-4xl mt-3">
+                        <h2 className="text-6xl text-gray mt-2" style={{ fontSize: '60px' }}>$29.99</h2>
+                        <ul className="text-left text-4xl">
                             <li className="mt-2">-Standrad MP3 Lease</li>
                             <li className='mt-2'>-2,000 Unit Cap</li>
                             <li className='mt-2'>-1 Commercial Use Only</li>
