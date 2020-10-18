@@ -186,7 +186,7 @@ const Pricing = ({auth}) => {
                             <li className='mt-2'>-1 Commercial Use Only</li>
                             <li className='mt-2'>-50,000 Stream Cap</li>
                         </ul>
-                        <button className="button button3 text-center" onClick={handleOpenBasic} style={{ color: 'black', fontSize: '30px' }}>
+                        <button className="button button3" onClick={handleOpenBasic} style={{ color: 'black', fontSize: '30px' }}>
                             <p className='textSwipeReadLicense'>
                                 READ LICENSE
 </p>

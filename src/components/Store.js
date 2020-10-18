@@ -6,21 +6,26 @@ import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 import { connect } from 'react-redux'
 import { css } from "@emotion/core";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import BarLoader from "react-spinners/BarLoader";
 
 const overrideLg = css`
   display: block;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
+  height: 4;
+  width: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const override = css`
     display: block;
-    margin-top: 200px;
-    margin-left: 400px;
-    margin-bottom: 90px;
+  height: 4;
+  width: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 
@@ -75,7 +80,7 @@ const Store = ({ auth, beats, status, error, isLoading, autoPlayState }) => {
             {status === 'loading' && (
                 <div>
                     <div className='hidden lg:block'>
-                        <PacmanLoader
+                        <BarLoader
                             css={overrideLg}
                             size={60}
                             color={"#ffffff"}
@@ -83,7 +88,7 @@ const Store = ({ auth, beats, status, error, isLoading, autoPlayState }) => {
                         />
                     </div>
                     <div className='block lg:hidden'>
-                        <PacmanLoader
+                        <BarLoader
                             css={override}
                             size={60}
                             color={"#ffffff"}

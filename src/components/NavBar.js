@@ -183,7 +183,7 @@ const NavBar = ({ auth }) => {
                             leaveTo="transform opacity-0 scale-95"
                             className='hidden lg:block relative z-10'
                         >
-                            <div className="z-10 hidden lg:block origin-top-right absolute right-0 mt-5 mr-5 w-56 rounded-md shadow-lg" id='cartModal'>
+                            <div className="z-10 hidden lg:block origin-top-right absolute right-0 mt-5 mr-5 w-56 rounded-md" id='cartModal'>
                                 <div className="rounded-md bg-white shadow-xs">
                                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                         {cart && (
@@ -225,7 +225,7 @@ const NavBar = ({ auth }) => {
                                 leaveTo="transform opacity-0 scale-95"
                                 className='hidden lg:block'
                             >
-                                <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
+                                <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md">
                                     <div className="rounded-md bg-white shadow-xs">
                                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                             <Link to='/mybeats' onClick={() => {
@@ -247,7 +247,10 @@ const NavBar = ({ auth }) => {
                                                     </button>
                                                 )}
                                                 {!auth.isAuthenticated && (
-                                                    <Link to='/login'>
+                                                    <Link onClick={() => {
+                                                        setIsOpenCart(false)
+                                                        setIsOpen(false)
+                                                    }} to='/login'>
                                                         <button className="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" >Sign in</button>
                                                     </Link>
                                                 )}

@@ -19,19 +19,26 @@ import { ModalBody, Modal, ModalFooter, Button } from 'react-bootstrap'
 import { urlState, mountState } from '../atoms'
 import { API } from 'aws-amplify'
 import { css } from "@emotion/core";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import BarLoader from "react-spinners/BarLoader";
 
 const overrideLg = css`
   display: block;
-  margin-top: 250px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 4;
+  width: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const override = css`
     display: block;
-    margin-top: 500px;
-    margin-left: 400px;
+  height: 4;
+  width: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const BeatHome = ({ auth }) => {
@@ -164,7 +171,7 @@ const BeatHome = ({ auth }) => {
 
     if (isLoading && matches) {
         return (
-            <PacmanLoader
+            <BarLoader
                 css={overrideLg}
                 size={90}
                 color={"#ffffff"}
@@ -173,7 +180,7 @@ const BeatHome = ({ auth }) => {
         )
     } else if (!matches && isLoading) {
         return (
-            <PacmanLoader
+            <BarLoader
                 css={override}
                 size={100}
                 color={"#ffffff"}

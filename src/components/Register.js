@@ -41,11 +41,11 @@ const Register = ({ isAuthenticated, error, register, auth }) => {
     }, [auth, clearErrors])
 
     return (
-        <div className='text-white ml-auto mr-auto mt-64 lg:mt-32 w-3/4 lg:w-1/3'>
-            <form>
+        <div className='flex justify-center text-white ml-auto mr-auto mt-64 lg:mt-32'>
+            <form className='w-3/4 lg:w-1/2'>
                 {msg ? (<Alert variant='danger'>{msg}</Alert>) : null}
                 <div className="form-group">
-                    <label className='text-5xl lg:text-xl' htmlFor="exampleInputEmail1">Name</label>
+                    <label className='text-6xl lg:text-3xl' htmlFor="exampleInputEmail1">Name</label>
                     <input
                         type="name"
                         className="form-control pt-10 pb-10 lg:pt-0 lg:pb-0 w-full text-4xl lg:text-xl"
@@ -54,7 +54,7 @@ const Register = ({ isAuthenticated, error, register, auth }) => {
                         value={nameState}
                         onChange={(e) => setName(e.target.value)}
                     />
-                    <label className='text-5xl lg:text-xl' htmlFor="exampleInputEmail1">Email address</label>
+                    <label className='text-6xl lg:text-3xl' htmlFor="exampleInputEmail1">Email address</label>
                     <input
                         type="email"
                         className="form-control pt-10 pb-10 text-4xl lg:text-xl lg:pb-0 lg:pt-0"
@@ -68,7 +68,7 @@ const Register = ({ isAuthenticated, error, register, auth }) => {
 </small>
                 </div>
                 <div className="form-group">
-                    <label className='text-5xl lg:text-xl' htmlFor="exampleInputPassword1">Password</label>
+                    <label className='text-6xl lg:text-3xl' htmlFor="exampleInputPassword1">Password</label>
                     <input
                         type="password"
                         className="form-control pb-10 pt-10 text-4xl lg:text-xl lg:pb-0 lg:pt-0"
@@ -85,7 +85,8 @@ const Register = ({ isAuthenticated, error, register, auth }) => {
                 </div> */}
                 <button
                     type="submit"
-                    className="btn btn-primary mr-2 text-4xl lg:text-xl"
+                    className="btn mr-2 text-4xl mt-8 lg:mt-2 p-3 lg:text-xl hover:underline text-black"
+                    style={{ backgroundColor: '#ff9500' }}
                     onClick={(e) => {
                         register({
                             name: nameState,
@@ -98,7 +99,7 @@ const Register = ({ isAuthenticated, error, register, auth }) => {
 </button>
                 <button
                     type="submit"
-                    className="btn btn-primary ml-2 text-4xl lg:text-xl"
+                    className="btn btn-secondary ml-2 text-4xl mt-8 lg:mt-2 p-3 lg:text-xl hover:underline text-black hover:text-black"
                     onClick={() => {
                         history.push('/login')
                     }}>
